@@ -2,7 +2,6 @@ import React from 'react'
 import MovieGenre from './ui/selectDropdowns/MovieGenre';
 import TVGenre from './ui/selectDropdowns/TVGenre';
 import SearchBar from './forms/SearchBar';
-import GetSearchedMovies from './GetSearchedMovies';
 
 const HeaderNav = () => {
 
@@ -14,7 +13,6 @@ const HeaderNav = () => {
         <TVGenre />
       </div>
       <SearchBar />
-      <GetSearchedMovies />
     </nav>
   )
 }

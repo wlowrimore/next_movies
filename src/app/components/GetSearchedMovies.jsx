@@ -1,6 +1,6 @@
 'use client'
 
-import React, { useEffect } from 'react';
+import React, { useState, useEffect } from 'react';
 import { useSearch } from '@/searchContext';
 
 const API_KEY = process.env.NEXT_PUBLIC_TMDB_API_KEY;
@@ -25,18 +25,28 @@ const fetchMovies = async (searchQuery) => {
 
 const GetSearchedMovies = () => {
   const { searchQuery } = useSearch();
+  const [movies, setMovies] = useState([]);
 
   useEffect(() => {
     if (searchQuery) {
       fetchMovies(searchQuery)
         .then(data => {
           console.log(`Here's what we found for: ${searchQuery}`, data);
+          setMovies(data)
         });
     }
   }, [searchQuery]);
 
   return (
-    <div>GetSearchedMovies</div>
+    <div>
+      <h1>Results for {searchQuery}</h1>
+      {movies.map((movie) => (
+        <div key={movie.id}>
+          <h2>{movie.title}</h2>
+          <p>{movie.overview}</p>
+        </div>
+      ))}
+    </div>
   );
 }
 
