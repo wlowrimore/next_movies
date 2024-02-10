@@ -2,7 +2,6 @@
 
 import { useState } from 'react';
 import { useSearch } from '@/searchContext';
-import { debounce } from 'lodash';
 import { FaSistrix } from 'react-icons/fa6';
 
 const SearchBar = () => {
