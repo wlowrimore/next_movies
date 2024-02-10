@@ -4,7 +4,7 @@ import { useState } from 'react'
 import Image from "next/image";
 import Thumb from '/public/images/thumb-up.webp';
 
-const MovieCard = ({ movies }) => {
+const MovieCard = ({ movies, pageNumber, setPageNumber }) => {
   const [modalData, setModalData] = useState(null);
 
   const openModal = (movie) => {
@@ -20,14 +20,15 @@ const MovieCard = ({ movies }) => {
       <div className='my-24 '>
         <h1 className='text-3xl font-bold'>Here's what&apos;s trending now</h1>
         <div className='grid grid-cols-5 gap-10 py-8'>
-          {movies.results.map((movie) => (
+          {movies.results && movies.results.map((movie) => (
             <div key={movie.id} className='max-w-[16rem]'>
               <Image
                 src={`https://image.tmdb.org/t/p/w500${movie.poster_path}`}
                 width={250}
                 height={350}
                 alt={movie.title}
-                className='rounded-2xl shadow-md shadow-neutral-900'
+                onClick={() => openModal(movie)}
+                className='rounded-2xl shadow-md shadow-neutral-900 cursor-pointer hover:opacity-80 hover:scale-105 transition duration-300'
               />
               <h2 className='font-semibold pt-3'>{movie.title}<span className='text-sm font-normal ml-3'>{movie.release_date.split('-')[0]}</span></h2>
               <div className='flex items-center gap-2'>
@@ -43,6 +44,21 @@ const MovieCard = ({ movies }) => {
               <p className='w-full py-4'>{movie.overview.slice(0, 100)}<span onClick={() => openModal(movie)} className='text-sm text-orange-500 italic cursor-pointer hover:text-indigo-500 transition duration-300'>...read more</span></p>
             </div>
           ))}
+        </div>
+        <div className='flex items-center justify-center bg-neutral-800 text-white px-4 py-1 mb-[-4rem] rounded-xl'>
+          <button
+            className=''
+            onClick={() => setPageNumber((prevPage) => prevPage > 1 ? prevPage - 1 : 1)}
+          >
+            Prev
+          </button>
+          <p className='mx-10'>Page <span className='text-amber-500'>{pageNumber.toLocaleString()}</span> of <span className='text-blue-400'>{movies?.total_pages?.toLocaleString()}</span></p>
+          <button
+            className=''
+            onClick={() => setPageNumber((prevPage) => prevPage < movies.total_pages ? prevPage + 1 : movies.total_pages)}
+          >
+            Next
+          </button>
         </div>
       </div>
       {/* Modal */}

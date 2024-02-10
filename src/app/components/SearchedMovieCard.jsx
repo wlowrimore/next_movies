@@ -27,7 +27,8 @@ const SearchedMovieCard = ({ searchQuery = '', movies = [] }) => {
                 width={250}
                 height={350}
                 alt={movie.title}
-                className='rounded-2xl shadow-md shadow-neutral-900'
+                onClick={() => openModal(movie)}
+                className='rounded-2xl shadow-md shadow-neutral-900 cursor-pointer hover:opacity-80 hover:scale-105 transition duration-300'
               />
               <h2 className='font-semibold pt-3'>{movie.title}<span className='text-sm font-normal ml-3'>{movie.release_date.split('-')[0]}</span></h2>
               <div className='flex items-center gap-2'>
