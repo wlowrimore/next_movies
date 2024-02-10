@@ -1,10 +1,16 @@
 import React from 'react'
 import { FaSistrix } from 'react-icons/fa6';
+import MovieGenre from './ui/selectDropdowns/MovieGenre';
+import TVGenre from './ui/selectDropdowns/TVGenre';
 
 const HeaderNav = () => {
   return (
     <nav className='bg-neutral-800 w-full p-4 flex justify-around'>
       <h1 className='text-amber-500 text-4xl'>Next Movies</h1>
+      <div className='flex items-center gap-8'>
+        <MovieGenre />
+        <TVGenre />
+      </div>
       <div id='search-bar' className='flex items-center gap-2'>
         <input
           type='text'
