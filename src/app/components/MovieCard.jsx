@@ -18,7 +18,7 @@ const MovieCard = ({ movies, pageNumber, setPageNumber }) => {
   return (
     <>
       <div className='my-24 '>
-        <h1 className='text-3xl font-bold'>Here's what&apos;s trending now</h1>
+        <h1 className='text-3xl font-bold mt-6'>Here's what&apos;s trending now</h1>
         <div className='grid grid-cols-5 gap-10 py-8'>
           {movies.results && movies.results.map((movie) => (
             <div key={movie.id} className='max-w-[16rem]'>
@@ -28,7 +28,7 @@ const MovieCard = ({ movies, pageNumber, setPageNumber }) => {
                 height={350}
                 alt={movie.title}
                 onClick={() => openModal(movie)}
-                className='rounded-2xl shadow-md shadow-neutral-900 cursor-pointer hover:opacity-80 hover:scale-105 transition duration-300'
+                className='rounded-2xl shadow-md shadow-neutral-900 cursor-pointer hover:opacity-80 hover:scale-105 transition duration-300 border border-zinc-500'
               />
               <h2 className='font-semibold pt-3'>{movie.title}<span className='text-sm font-normal ml-3'>{movie.release_date.split('-')[0]}</span></h2>
               <div className='flex items-center gap-2'>
@@ -47,14 +47,14 @@ const MovieCard = ({ movies, pageNumber, setPageNumber }) => {
         </div>
         <div className='flex items-center justify-center bg-neutral-800 text-white px-4 py-1 mb-[-4rem] rounded-xl'>
           <button
-            className=''
+            className='hover:scale-110 hover:text-teal-400 transition duration-200 ease-in'
             onClick={() => setPageNumber((prevPage) => prevPage > 1 ? prevPage - 1 : 1)}
           >
             Prev
           </button>
           <p className='mx-10'>Page <span className='text-amber-500'>{pageNumber.toLocaleString()}</span> of <span className='text-blue-400'>{movies?.total_pages?.toLocaleString()}</span></p>
           <button
-            className=''
+            className='hover:scale-110 hover:text-teal-500 transition duration-200 ease-in'
             onClick={() => setPageNumber((prevPage) => prevPage < movies.total_pages ? prevPage + 1 : movies.total_pages)}
           >
             Next
@@ -75,7 +75,7 @@ const MovieCard = ({ movies, pageNumber, setPageNumber }) => {
                 width={500}
                 height={600}
                 alt={modalData.title}
-                className='rounded-2xl shadow-md shadow-neutral-900'
+                className='rounded-2xl shadow-md shadow-neutral-900 border border-zinc-500'
               />
               <div className='flex flex-col'>
                 <h2 className='text-4xl font-bold mb-1'>{modalData.title}</h2>

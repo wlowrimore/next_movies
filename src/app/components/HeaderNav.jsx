@@ -6,7 +6,7 @@ import SearchBar from './forms/SearchBar';
 const HeaderNav = () => {
 
   return (
-    <nav className='bg-neutral-800 w-full p-4 flex justify-around fixed top-0 z-10'>
+    <nav className='bg-neutral-800 w-full p-4 flex justify-around fixed top-0 z-10 shadow-lg shadow-neutral-800'>
       <h1 className='text-amber-500 text-4xl'>Next Movies</h1>
       <div className='flex items-center gap-8'>
         <MovieGenre />

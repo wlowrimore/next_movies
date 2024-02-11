@@ -8,11 +8,17 @@ import GetSearchedMovies from "../GetSearchedMovies";
 const ComponentSwitcher = () => {
   const { searchQuery } = useSearch();
 
-  if (searchQuery) {
-    return <GetSearchedMovies />
-  } else {
-    return <GetPopMovies />
-  }
+  return (
+    <>
+      {searchQuery ? <GetSearchedMovies /> : <GetPopMovies />}
+    </>
+  )
+
+  // if (searchQuery) {
+  //   return <GetSearchedMovies />
+  // } else {
+  //   return <GetPopMovies />
+  // }
 }
 
 export default ComponentSwitcher

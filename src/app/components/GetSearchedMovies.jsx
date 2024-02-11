@@ -25,7 +25,7 @@ const fetchMovies = async (searchQuery) => {
 }
 
 const GetSearchedMovies = () => {
-  const { searchQuery } = useSearch();
+  const { searchQuery, resetSearchQuery } = useSearch();
   const [movies, setMovies] = useState([]);
 
   useEffect(() => {
@@ -40,7 +40,7 @@ const GetSearchedMovies = () => {
 
   return (
     <div>
-      <SearchedMovieCard movies={movies} searchQuery={searchQuery} />
+      <SearchedMovieCard movies={movies} searchQuery={searchQuery} resetSearchQuery={resetSearchQuery} />
     </div>
   );
 }

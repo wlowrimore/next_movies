@@ -4,8 +4,9 @@ import { useState } from 'react';
 import Image from 'next/image';
 import Thumb from '/public/images/thumb-up.webp';
 
-const SearchedMovieCard = ({ searchQuery = '', movies = [] }) => {
+const SearchedMovieCard = ({ searchQuery = '', movies = [], resetSearchQuery }) => {
   const [modalData, setModalData] = useState(null);
+
 
   const openModal = (movie) => {
     setModalData(movie);
@@ -18,7 +19,10 @@ const SearchedMovieCard = ({ searchQuery = '', movies = [] }) => {
   return (
     <>
       <div className='my-24 '>
-        <h1 className='text-3xl font-bold'>Results for {searchQuery}</h1>
+        <div className='flex justify-between items-end'>
+          <h1 className='text-3xl pt-6 font-bold'>Results for {searchQuery}</h1>
+          <button onClick={resetSearchQuery} className='h-[2rem] py-1 px-3 mr-2 bg-neutral-800 rounded-lg text-white hover:bg-amber-800/50 hover:text-black transition duration-300'>Back to Movies</button>
+        </div>
         <div className='grid grid-cols-5 gap-10 py-8'>
           {movies.map((movie) => (
             <div key={movie.id} className='max-w-[16rem]'>
@@ -28,7 +32,7 @@ const SearchedMovieCard = ({ searchQuery = '', movies = [] }) => {
                 height={350}
                 alt={movie.title}
                 onClick={() => openModal(movie)}
-                className='rounded-2xl shadow-md shadow-neutral-900 cursor-pointer hover:opacity-80 hover:scale-105 transition duration-300'
+                className='rounded-2xl shadow-md shadow-neutral-900 cursor-pointer hover:opacity-80 hover:scale-105 transition duration-300 border border-zinc-500'
               />
               <h2 className='font-semibold pt-3'>{movie.title}<span className='text-sm font-normal ml-3'>{movie.release_date.split('-')[0]}</span></h2>
               <div className='flex items-center gap-2'>
@@ -60,7 +64,7 @@ const SearchedMovieCard = ({ searchQuery = '', movies = [] }) => {
                 width={500}
                 height={600}
                 alt={modalData.title}
-                className='rounded-2xl shadow-md shadow-neutral-900'
+                className='rounded-2xl shadow-md shadow-neutral-900 border border-zinc-500'
               />
               <div className='flex flex-col'>
                 <h2 className='text-4xl font-bold mb-1'>{modalData.title}</h2>
