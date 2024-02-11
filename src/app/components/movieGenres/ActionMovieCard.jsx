@@ -1,14 +1,15 @@
 'use client'
 
 import { useState } from 'react'
-import Image from "next/image";
+import Image from "next/image"
 import Thumb from '/public/images/thumb-up.webp';
 
-const MovieCard = ({ movies, pageNumber, setPageNumber }) => {
+const ActionMovieCard = ({ actionMovies, pageNumber, setPageNumber }) => {
+  console.log("Action Movies:", actionMovies);
   const [modalData, setModalData] = useState(null);
 
-  const openModal = (movie) => {
-    setModalData(movie);
+  const openModal = (actionMovie) => {
+    setModalData(actionMovie);
   }
 
   const closeModal = () => {
@@ -25,7 +26,7 @@ const MovieCard = ({ movies, pageNumber, setPageNumber }) => {
 
   const handleNextPage = () => {
     setPageNumber((prevPage) => {
-      const newPage = prevPage < movies.total_pages ? prevPage + 1 : movies.total_pages;
+      const newPage = prevPage < actionMovies.total_pages ? prevPage + 1 : actionMovies.total_pages;
       window.scrollTo({ top: 0, behavior: 'smooth' });
       return newPage;
     });
@@ -34,9 +35,9 @@ const MovieCard = ({ movies, pageNumber, setPageNumber }) => {
   return (
     <>
       <div className='my-24 '>
-        <h1 className='text-3xl font-bold mt-6'>Here's what&apos;s trending now</h1>
+        <h1 className='text-3xl font-bold mt-6'>Action</h1>
         <div className='grid grid-cols-5 gap-10 py-8'>
-          {movies.results && movies.results.map((movie) => (
+          {actionMovies?.results && actionMovies?.results?.map((movie) => (
             <div key={movie.id} className='max-w-[16rem]'>
               <Image
                 src={`https://image.tmdb.org/t/p/w500${movie.poster_path}`}
@@ -68,7 +69,7 @@ const MovieCard = ({ movies, pageNumber, setPageNumber }) => {
           >
             Prev
           </button>
-          <p className='mx-10'>Page <span className='text-amber-500'>{pageNumber.toLocaleString()}</span> of <span className='text-blue-400'>{movies?.total_pages?.toLocaleString()}</span></p>
+          <p className='mx-10'>Page <span className='text-amber-500'>{pageNumber?.toLocaleString()}</span> of <span className='text-blue-400'>{actionMovies?.total_pages.toLocaleString()}</span></p>
           <button
             className='hover:scale-110 hover:text-teal-500 transition duration-200 ease-in'
             onClick={handleNextPage}
@@ -119,4 +120,4 @@ const MovieCard = ({ movies, pageNumber, setPageNumber }) => {
   )
 }
 
-export default MovieCard
+export default ActionMovieCard

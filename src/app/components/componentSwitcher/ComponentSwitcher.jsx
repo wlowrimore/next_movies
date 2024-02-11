@@ -2,7 +2,7 @@
 
 import { useSearch } from "@/searchContext";
 
-import GetPopMovies from "../GetPopMovies";
+import GetPopMovies from "../lib/GetPopMovies";
 import GetSearchedMovies from "../GetSearchedMovies";
 
 const ComponentSwitcher = () => {
@@ -13,12 +13,6 @@ const ComponentSwitcher = () => {
       {searchQuery ? <GetSearchedMovies /> : <GetPopMovies />}
     </>
   )
-
-  // if (searchQuery) {
-  //   return <GetSearchedMovies />
-  // } else {
-  //   return <GetPopMovies />
-  // }
 }
 
 export default ComponentSwitcher
