@@ -13,7 +13,7 @@ const MovieGenre = () => {
         <div className='absolute right-[12.8%] z-10 rounded-b-xl bg-neutral-800 text-neutral-300 py-6 space-y-1 gap-2 grid grid-cols-6'>
           <Link href='/action-movies'><option value='action' className='cursor-pointer hover:bg-neutral-700 rounded-2xl hover:text-teal-400 py-1 px-3'>Action</option></Link>
           <Link href='/adventure-movies'><option value='adventure' className='cursor-pointer hover:bg-neutral-700 rounded-2xl hover:text-teal-400  py-1 px-3'>Adventure</option></Link>
-          <option value='animation' className='cursor-pointer hover:bg-neutral-700 rounded-2xl hover:text-teal-400  py-1 px-3'>Animation</option>
+          <Link href='/animation-movies'><option value='animation' className='cursor-pointer hover:bg-neutral-700 rounded-2xl hover:text-teal-400  py-1 px-3'>Animation</option></Link>
           <option value='comedy' className='cursor-pointer hover:bg-neutral-700 rounded-2xl hover:text-teal-400  py-1 px-3'>Comedy</option>
           <option value='crime' className='cursor-pointer hover:bg-neutral-700 rounded-2xl hover:text-teal-400  py-1 px-3'>Crime</option>
           <option value='documentary' className='cursor-pointer hover:bg-neutral-700 rounded-2xl hover:text-teal-400  py-1 px-3'>Documentary</option>
