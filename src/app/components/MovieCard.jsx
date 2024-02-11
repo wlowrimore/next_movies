@@ -15,6 +15,22 @@ const MovieCard = ({ movies, pageNumber, setPageNumber }) => {
     setModalData(null);
   }
 
+  const handlePrevPage = () => {
+    setPageNumber((prevPage) => {
+      const newPage = prevPage > 1 ? prevPage - 1 : 1;
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+      return newPage;
+    })
+  }
+
+  const handleNextPage = () => {
+    setPageNumber((prevPage) => {
+      const newPage = prevPage < movies.total_pages ? prevPage + 1 : movies.total_pages;
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+      return newPage;
+    });
+  };
+
   return (
     <>
       <div className='my-24 '>
@@ -48,14 +64,14 @@ const MovieCard = ({ movies, pageNumber, setPageNumber }) => {
         <div className='flex items-center justify-center bg-neutral-800 text-white px-4 py-1 mb-[-4rem] rounded-xl'>
           <button
             className='hover:scale-110 hover:text-teal-400 transition duration-200 ease-in'
-            onClick={() => setPageNumber((prevPage) => prevPage > 1 ? prevPage - 1 : 1)}
+            onClick={handlePrevPage}
           >
             Prev
           </button>
           <p className='mx-10'>Page <span className='text-amber-500'>{pageNumber.toLocaleString()}</span> of <span className='text-blue-400'>{movies?.total_pages?.toLocaleString()}</span></p>
           <button
             className='hover:scale-110 hover:text-teal-500 transition duration-200 ease-in'
-            onClick={() => setPageNumber((prevPage) => prevPage < movies.total_pages ? prevPage + 1 : movies.total_pages)}
+            onClick={handleNextPage}
           >
             Next
           </button>
