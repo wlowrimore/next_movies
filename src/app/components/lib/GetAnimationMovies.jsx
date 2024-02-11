@@ -2,7 +2,7 @@
 
 import { useState, useEffect } from 'react';
 
-import AnimationMovieCard from './movieGenres/AnimationMovieCard';
+import AnimationMovieCard from '../movieGenres/AnimationMovieCard';
 const API_KEY = process.env.NEXT_PUBLIC_TMDB_API_KEY
 
 async function fetchAnimationMovies(page) {

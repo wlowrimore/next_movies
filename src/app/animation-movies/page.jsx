@@ -1,5 +1,5 @@
 import React from 'react'
-import GetAnimationMovies from '../components/GetAnimationMovies'
+import GetAnimationMovies from '../components/lib/GetAnimationMovies'
 
 
 const AnimationMoviesPage = () => {

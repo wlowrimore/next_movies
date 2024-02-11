@@ -15,21 +15,21 @@ const MovieGenre = () => {
           <Link href='/adventure-movies'><option value='adventure' className='cursor-pointer hover:bg-neutral-700 rounded-2xl hover:text-teal-400  py-1 px-3'>Adventure</option></Link>
           <Link href='/animation-movies'><option value='animation' className='cursor-pointer hover:bg-neutral-700 rounded-2xl hover:text-teal-400  py-1 px-3'>Animation</option></Link>
           <Link href='/comedy-movies'><option value='comedy' className='cursor-pointer hover:bg-neutral-700 rounded-2xl hover:text-teal-400  py-1 px-3'>Comedy</option></Link>
-          <option value='crime' className='cursor-pointer hover:bg-neutral-700 rounded-2xl hover:text-teal-400  py-1 px-3'>Crime</option>
-          <option value='documentary' className='cursor-pointer hover:bg-neutral-700 rounded-2xl hover:text-teal-400  py-1 px-3'>Documentary</option>
-          <option value='drama' className='cursor-pointer hover:bg-neutral-700 rounded-2xl hover:text-teal-400  py-1 px-3'>Drama</option>
-          <option value='family' className='cursor-pointer hover:bg-neutral-700 rounded-2xl hover:text-teal-400  py-1 px-3'>Family</option>
-          <option value='fantasy' className='cursor-pointer hover:bg-neutral-700 rounded-2xl hover:text-teal-400  py-1 px-3'>Fantasy</option>
-          <option value='history' className='cursor-pointer hover:bg-neutral-700 rounded-2xl hover:text-teal-400  py-1 px-3'>History</option>
-          <option value='horror' className='cursor-pointer hover:bg-neutral-700 rounded-2xl hover:text-teal-400  py-1 px-3'>Horror</option>
-          <option value='music' className='cursor-pointer hover:bg-neutral-700 rounded-2xl hover:text-teal-400  py-1 px-3'>Music</option>
-          <option value='mystery' className='cursor-pointer hover:bg-neutral-700 rounded-2xl hover:text-teal-400  py-1 px-3'>Mystery</option>
-          <option value='romance' className='cursor-pointer hover:bg-neutral-700 rounded-2xl hover:text-teal-400  py-1 px-3'>Romance</option>
-          <option value='science-fiction' className='cursor-pointer hover:bg-neutral-700 rounded-2xl hover:text-teal-400  py-1 px-3'>Science Fiction</option>
-          <option value='tv-movie' className='cursor-pointer hover:bg-neutral-700 rounded-2xl hover:text-teal-400  py-1 px-3'>TV Movie</option>
-          <option value='thriller' className='cursor-pointer hover:bg-neutral-700 rounded-2xl hover:text-teal-400  py-1 px-3'>Thriller</option>
-          <option value='war' className='cursor-pointer hover:bg-neutral-700 rounded-2xl hover:text-teal-400  py-1 px-3'>War</option>
-          <option value='western' className='cursor-pointer hover:bg-neutral-700 rounded-2xl hover:text-teal-400  py-1 px-3'>Western</option>
+          <Link href='/crime-movies'><option value='crime' className='cursor-pointer hover:bg-neutral-700 rounded-2xl hover:text-teal-400  py-1 px-3'>Crime</option></Link>
+          <Link href='/documentary-movies'><option value='documentary' className='cursor-pointer hover:bg-neutral-700 rounded-2xl hover:text-teal-400  py-1 px-3'>Documentary</option></Link>
+          <Link href='/drama-movies'><option value='drama' className='cursor-pointer hover:bg-neutral-700 rounded-2xl hover:text-teal-400  py-1 px-3'>Drama</option></Link>
+          <Link href='/family-movies'><option value='family' className='cursor-pointer hover:bg-neutral-700 rounded-2xl hover:text-teal-400  py-1 px-3'>Family</option></Link>
+          <Link href='/fantasy-movies'><option value='fantasy' className='cursor-pointer hover:bg-neutral-700 rounded-2xl hover:text-teal-400  py-1 px-3'>Fantasy</option></Link>
+          <Link href='/history-movies'><option value='history' className='cursor-pointer hover:bg-neutral-700 rounded-2xl hover:text-teal-400  py-1 px-3'>History</option></Link>
+          <Link href='/horror-movies'><option value='horror' className='cursor-pointer hover:bg-neutral-700 rounded-2xl hover:text-teal-400  py-1 px-3'>Horror</option></Link>
+          <Link href='/music-movies'><option value='music' className='cursor-pointer hover:bg-neutral-700 rounded-2xl hover:text-teal-400  py-1 px-3'>Music</option></Link>
+          <Link href='/mystery-movies'><option value='mystery' className='cursor-pointer hover:bg-neutral-700 rounded-2xl hover:text-teal-400  py-1 px-3'>Mystery</option></Link>
+          <Link href='/romance-movies'><option value='romance' className='cursor-pointer hover:bg-neutral-700 rounded-2xl hover:text-teal-400  py-1 px-3'>Romance</option></Link>
+          <Link href='/science-fiction-movies'><option value='science-fiction' className='cursor-pointer hover:bg-neutral-700 rounded-2xl hover:text-teal-400  py-1 px-3'>Science Fiction</option></Link>
+          <Link href='/tv-movies'><option value='tv-movie' className='cursor-pointer hover:bg-neutral-700 rounded-2xl hover:text-teal-400  py-1 px-3'>TV Movie</option></Link>
+          <Link href='/thriller-movies'><option value='thriller' className='cursor-pointer hover:bg-neutral-700 rounded-2xl hover:text-teal-400  py-1 px-3'>Thriller</option></Link>
+          <Link href='/war-movies'><option value='war' className='cursor-pointer hover:bg-neutral-700 rounded-2xl hover:text-teal-400  py-1 px-3'>War</option></Link>
+          <Link href='/western-movies'><option value='western' className='cursor-pointer hover:bg-neutral-700 rounded-2xl hover:text-teal-400  py-1 px-3'>Western</option></Link>
         </div>
       )}
 
