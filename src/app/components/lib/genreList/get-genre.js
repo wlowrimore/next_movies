@@ -32,6 +32,12 @@ export const getGenres = (genreIds) => {
       return "Science Fiction";
     case 10770:
       return "TV Movie";
+    case 53:
+      return "Thriller";
+    case 10752:
+      return "War";
+    case 37:
+      return "Western";
     default:
       return "Unknown";
   }
