@@ -4,6 +4,8 @@ import { useState } from 'react';
 import Image from 'next/image';
 import Thumb from '/public/images/thumb-up.webp';
 
+import { getGenres } from './lib/genreList/get-genre';
+
 const SearchedMovieCard = ({ searchQuery = '', movies = [], resetSearchQuery }) => {
   const [modalData, setModalData] = useState(null);
 
@@ -35,6 +37,13 @@ const SearchedMovieCard = ({ searchQuery = '', movies = [], resetSearchQuery }) 
                 className='rounded-2xl shadow-md shadow-neutral-900 cursor-pointer hover:opacity-80 hover:scale-105 transition duration-300 border border-zinc-500'
               />
               <h2 className='font-semibold pt-3'>{movie.title}<span className='text-sm font-normal ml-3'>{movie.release_date.split('-')[0]}</span></h2>
+              <div className='flex'>
+                <p className='text-xs tracking-wider text-rose-600 pb-1'>
+                  {Array.isArray(movie.genre_ids) && movie.genre_ids.length > 0
+                    ? movie.genre_ids.map((id) => getGenres(id)).join(' | ')
+                    : 'Unknown'}
+                </p>
+              </div>
               <div className='flex items-center gap-2'>
                 <Image
                   src={Thumb}
@@ -68,6 +77,13 @@ const SearchedMovieCard = ({ searchQuery = '', movies = [], resetSearchQuery }) 
               />
               <div className='flex flex-col'>
                 <h2 className='text-4xl font-bold mb-1'>{modalData.title}</h2>
+                <div className='flex'>
+                  <p className='text-sm font-semibold tracking-wide text-rose-600 pb-1'>
+                    {Array.isArray(modalData.genre_ids) && modalData.genre_ids.length > 0
+                      ? modalData.genre_ids.map((id) => getGenres(id)).join(' | ')
+                      : 'Unknown'}
+                  </p>
+                </div>
                 <div className='flex items-center gap-4 mb-6'>
                   <div className='flex items-center gap-2'>
                     <Image
