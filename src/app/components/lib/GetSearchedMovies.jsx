@@ -2,7 +2,7 @@
 
 import React, { useState, useEffect } from 'react';
 import { useSearch } from '@/searchContext';
-import SearchedMovieCard from './SearchedMovieCard';
+import SearchedMovieCard from '../SearchedMovieCard';
 
 const API_KEY = process.env.NEXT_PUBLIC_TMDB_API_KEY;
 
@@ -29,6 +29,7 @@ const GetSearchedMovies = () => {
   const [movies, setMovies] = useState([]);
 
   useEffect(() => {
+    console.log("Search query:", searchQuery);
     if (searchQuery) {
       fetchMovies(searchQuery)
         .then(data => {

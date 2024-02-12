@@ -8,6 +8,7 @@ export const SearchProvider = ({ children }) => {
   const [searchQuery, setSearchQuery] = useState('');
 
   const updateSearchQuery = (query) => {
+    console.log("Updating search query:", query)
     setSearchQuery(query);
   };
 

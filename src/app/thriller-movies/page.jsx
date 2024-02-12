@@ -1,11 +1,14 @@
-import React from 'react'
-import GetThrillerMovies from '../components/lib/GetThrillerMovies'
+'use client'
 
+import { useSearch } from '@/app/hooks/useSearch'
+import GetThrillerMovies from '../components/lib/GetThrillerMovies'
+import GetSearchedMovies from '../components/lib/GetSearchedMovies'
 
 const ThrillerMoviesPage = () => {
+  const { searchQuery } = useSearch();
   return (
     <div className='min-h-screen min-w-screen flex flex-col items-center mx-auto container'>
-      <GetThrillerMovies />
+      {searchQuery ? <GetSearchedMovies /> : <GetThrillerMovies />}
     </div>
   )
 }

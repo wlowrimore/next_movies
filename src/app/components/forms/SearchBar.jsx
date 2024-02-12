@@ -1,6 +1,6 @@
 'use client'
 
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { useSearch } from '@/searchContext';
 import { FaSistrix } from 'react-icons/fa6';
 
@@ -8,10 +8,14 @@ const SearchBar = () => {
   const { searchQuery, updateSearchQuery } = useSearch();
   const [query, setQuery] = useState('');
 
+  useEffect(() => {
+    console.log("This is your search query:", searchQuery);
+  }, [searchQuery])
+
   const handleSubmit = (e) => {
     e.preventDefault();
+    console.log("Query:", query);
     updateSearchQuery(query)
-    console.log("This is your search query:", searchQuery);
   }
 
   return (

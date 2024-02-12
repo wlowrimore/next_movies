@@ -1,11 +1,14 @@
-import React from 'react'
-import GetMusicMovies from '../components/lib/GetMusicMovies'
+'use client'
 
+import { useSearch } from '@/searchContext'
+import GetMusicMovies from '../components/lib/GetMusicMovies'
+import GetSearchedMovies from '../components/lib/GetSearchedMovies'
 
 const MusicMoviesPage = () => {
+  const { searchQuery } = useSearch();
   return (
     <div className='min-h-screen min-w-screen flex flex-col items-center mx-auto container'>
-      <GetMusicMovies />
+      {searchQuery ? <GetSearchedMovies /> : <GetMusicMovies />}
     </div>
   )
 }
