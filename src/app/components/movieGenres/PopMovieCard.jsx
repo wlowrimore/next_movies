@@ -4,7 +4,8 @@ import { useState } from 'react'
 import Image from "next/image";
 import Thumb from '/public/images/thumb-up.webp';
 
-import { getGenres } from './lib/genreList/get-genre';
+import { getGenres } from '../lib/genreList/get-genre';
+import HomePageHeroGallery from '../ui/HomePageHeroGallery';
 
 const PopMovieCard = ({ movies, pageNumber, setPageNumber }) => {
   const [modalData, setModalData] = useState(null);
@@ -36,6 +37,19 @@ const PopMovieCard = ({ movies, pageNumber, setPageNumber }) => {
   return (
     <>
       <div className='my-24 '>
+        <div className='bg-homepage-bg bg-cover bg-no-repeat bg-center rounded-b-xl rounded-t-md'>
+          <div className='bg-black/50 rounded-b-xl rounded-t-md p-12 shadow-md shadow-neutral-800'>
+            <h1 className='text-4xl text-neutral-200 w-[40rem]'>STREAM MOVIES AND TV SHOWS</h1>
+            <div className='w-[32rem]'>
+              <h2 className='text-3xl text-neutral-200'>Choose from over 100,000+ titles!</h2>
+              <h3 className='text-xl text-white'>Start streaming now with a 7-day free trial.  Pay only $14.99/month after that.</h3>
+            </div>
+            <div className='mt-8'>
+              <button className='bg-amber-500 p-2 rounded-lg text-white hover:bg-amber-800/50 hover:text-black transition duration-300'>Start Your Free Trial</button>
+            </div>
+            <HomePageHeroGallery movies={movies} />
+          </div>
+        </div>
         <h1 className='text-3xl font-bold mt-6'>Here's what&apos;s trending now</h1>
         <div className='grid grid-cols-5 gap-10 py-8'>
           {movies.results && movies.results.map((movie) => (
