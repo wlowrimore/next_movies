@@ -19,7 +19,7 @@ const HomePageHeroGallery = ({ movies, pageNumber }) => {
   return (
     <div className='flex flex-col w-full'>
       {/* <div className='w-full'> */}
-      <h1 className='w-full bg-gradient-to-r text-center from-amber-300 to-red-800 bg-clip-text text-transparent mb-6 ml-[-2rem] text-3xl font-semibold tracking-wide'>Top 5 Watched Movies</h1>
+      <h1 className='w-full bg-gradient-to-r text-end from-amber-500 to-amber-700 bg-clip-text text-transparent mb-2 text-3xl tracking-wide'>Top 5 Watched Movies</h1>
       {/* </div> */}
       <div className='flex justify-end'>
         {numberOneMovie && (
@@ -31,7 +31,7 @@ const HomePageHeroGallery = ({ movies, pageNumber }) => {
               alt={numberOneMovie.title}
               className='w-[18rem] mr-2 rounded-xl border border-zinc-300'
             />
-            <p className='absolute right-[42.5%] top-0 border-l border-t border-zinc-300 rounded-tl-lg rounded-br-lg bg-red-500 text-xl font-bold text-white tracking-wide px-2 py-1'>#1 WATCHED</p>
+            <p className='absolute right-[42%] w-[58%] pl-3 top-0 border-l border-t border-zinc-300 rounded-tl-lg rounded-br-lg bg-red-500 text-xl font-bold text-white tracking-wide py-1'>#1 WATCHED</p>
           </div>
         )}
         <div className='grid grid-cols-2 gap-2'>

@@ -1,6 +1,6 @@
 'use client'
 
-import { useSearch } from '@/app/hooks/useSearch'
+import { useSearch } from '@/searchContext'
 import GetThrillerMovies from '../components/lib/GetThrillerMovies'
 import GetSearchedMovies from '../components/lib/GetSearchedMovies'
 
