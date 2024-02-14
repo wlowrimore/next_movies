@@ -15,7 +15,7 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      <body className={montserrat.className}>
+      <body className={`{montserrat.className} bg-neutral-950`}>
         <SearchProvider>
           <HeaderNav />
           {children}

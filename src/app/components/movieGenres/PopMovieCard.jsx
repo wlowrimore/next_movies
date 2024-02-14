@@ -36,21 +36,21 @@ const PopMovieCard = ({ movies, pageNumber, setPageNumber }) => {
 
   return (
     <>
-      <div className='my-24 flex flex-col items-center w-5/6'>
+      <div className='my-24 flex flex-col w-full'>
 
 
-        <div className='bg-homepage-bg bg-cover bg-no-repeat bg-center rounded-b-xl rounded-t-md'>
-          <div className='bg-black/50 rounded-b-xl rounded-t-md p-12 shadow-md shadow-neutral-800'>
+        <div className='bg-fixed bg-homepage-bg bg-cover bg-no-repeat bg-center rounded-b-xl rounded-t-md'>
+          <div className='bg-black/50 rounded-b-xl rounded-t-md p-16'>
 
             <div className='flex'>
               <div className='flex flex-col justify-center'>
-                <h1 className='w-full mb-2 text-6xl tracking-wide text-neutral-200'>STREAM MOVIES AND TV SHOWS</h1>
+                <h1 className='w-full mb-2 text-5xl tracking-wide text-neutral-200'>STREAM MOVIES AND TV SHOWS</h1>
                 <div className='w-[32rem]'>
                   <h2 className='w-3/4 mb-2 text-3xl text-neutral-200'>Choose from over 100,000 titles!</h2>
                   <h3 className='w-3/4 text-xl text-white font-light tracking-wide'>Start streaming now with your 7-day free trial offer. Cancel at any time.  Pay only $14.99 / month after that.</h3>
                 </div>
                 <div className='mt-8'>
-                  <button className='bg-amber-500 p-2 rounded-lg text-lg font-semibold text-neutral-800 hover:bg-neutral-700 hover:text-white transition duration-300'>Start Your Free Trial</button>
+                  <button className='bg-amber-500 p-2 rounded-lg text-lg font-semibold text-neutral-800 hover:bg-rose-700 hover:text-white transition duration-300'>Start Your Free Trial</button>
                 </div>
               </div>
               <HomePageHeroGallery movies={movies} pageNumber={pageNumber} />
@@ -63,14 +63,14 @@ const PopMovieCard = ({ movies, pageNumber, setPageNumber }) => {
 
         <div className='grid grid-cols-5 gap-10 py-8'>
           {movies.results && movies.results.map((movie) => (
-            <div key={movie.id} className='max-w-[16rem]'>
+            <div key={movie.id} className='max-w-[16rem] text-neutral-200'>
               <Image
                 src={`https://image.tmdb.org/t/p/w500${movie.poster_path}`}
                 width={250}
                 height={350}
                 alt={movie.title}
                 onClick={() => openModal(movie)}
-                className='rounded-2xl shadow-md shadow-neutral-900 cursor-pointer hover:opacity-80 hover:scale-105 transition duration-300 border border-zinc-500'
+                className='rounded-2xl cursor-pointer hover:opacity-80 hover:scale-105 transition duration-300'
               />
               <h2 className='font-semibold pt-3'>{movie.title}<span className='text-sm font-normal ml-3'>{movie.release_date.split('-')[0]}</span></h2>
               <div className='flex'>
