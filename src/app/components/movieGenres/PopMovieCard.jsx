@@ -6,6 +6,7 @@ import Thumb from '/public/images/thumb-up.webp';
 
 import { getGenres } from '../lib/genreList/get-genre';
 import HomePageHeroGallery from '../ui/HomePageHeroGallery';
+import Features from '../features/Features';
 
 const PopMovieCard = ({ movies, pageNumber, setPageNumber }) => {
   const [modalData, setModalData] = useState(null);
@@ -46,7 +47,7 @@ const PopMovieCard = ({ movies, pageNumber, setPageNumber }) => {
               <div className='flex flex-col justify-center'>
                 <h1 className='w-full mb-2 text-5xl tracking-wide text-neutral-200'>STREAM MOVIES AND TV SHOWS</h1>
                 <div className='w-[32rem]'>
-                  <h2 className='w-3/4 mb-2 text-3xl text-neutral-200'>Choose from over 100,000 titles!</h2>
+                  <h2 className='w-3/4 mb-2 text-3xl text-neutral-200'>Choose from over a million titles!</h2>
                   <h3 className='w-3/4 text-xl text-white font-light tracking-wide'>Start streaming now with your 7-day free trial offer. Cancel at any time.  Pay only $14.99 / month after that.</h3>
                 </div>
                 <div className='mt-8'>
@@ -59,9 +60,10 @@ const PopMovieCard = ({ movies, pageNumber, setPageNumber }) => {
           </div>
         </div>
 
+        {/* Features */}
+        <Features />
 
-
-        <div className='grid grid-cols-5 gap-10 py-8'>
+        <div className='grid grid-cols-5 py-8 mx-auto gap-16'>
           {movies.results && movies.results.map((movie) => (
             <div key={movie.id} className='max-w-[16rem] text-neutral-200'>
               <Image
@@ -95,7 +97,7 @@ const PopMovieCard = ({ movies, pageNumber, setPageNumber }) => {
             </div>
           ))}
         </div>
-        <div className='flex items-center justify-center bg-neutral-800 text-white px-4 py-1 mb-[-4rem] rounded-xl'>
+        <div className='flex items-center justify-center bg-neutral-950 text-white px-4 py-1 mb-[-4rem] rounded-xl'>
           <button
             className='hover:scale-110 hover:text-teal-400 transition duration-200 ease-in'
             onClick={handlePrevPage}
