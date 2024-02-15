@@ -40,7 +40,7 @@ const PopMovieCard = ({ movies, pageNumber, setPageNumber }) => {
       <div className='my-24 flex flex-col w-full'>
 
 
-        <div className='bg-fixed bg-homepage-bg bg-cover bg-no-repeat bg-center rounded-b-xl rounded-t-md'>
+        {/* <div className='bg-fixed bg-homepage-bg bg-cover bg-no-repeat bg-center rounded-b-xl rounded-t-md'>
           <div className='bg-black/50 rounded-b-xl rounded-t-md p-16'>
 
             <div className='flex'>
@@ -58,12 +58,12 @@ const PopMovieCard = ({ movies, pageNumber, setPageNumber }) => {
             </div>
 
           </div>
-        </div>
+        </div> */}
 
         {/* Features */}
         <Features />
 
-        <div className='grid grid-cols-5 py-8 mx-auto gap-16'>
+        {/* <div className='grid grid-cols-5 py-8 mx-auto gap-16'>
           {movies.results && movies.results.map((movie) => (
             <div key={movie.id} className='max-w-[16rem] text-neutral-200'>
               <Image
@@ -72,7 +72,7 @@ const PopMovieCard = ({ movies, pageNumber, setPageNumber }) => {
                 height={350}
                 alt={movie.title}
                 onClick={() => openModal(movie)}
-                className='rounded-2xl cursor-pointer hover:opacity-80 hover:scale-105 transition duration-300'
+                className='rounded-2xl cursor-pointer hover:opacity-80 hover:border-2 border-zinc-200 hover:scale-105 transition duration-300'
               />
               <h2 className='font-semibold pt-3'>{movie.title}<span className='text-sm font-normal ml-3'>{movie.release_date.split('-')[0]}</span></h2>
               <div className='flex'>
@@ -96,7 +96,7 @@ const PopMovieCard = ({ movies, pageNumber, setPageNumber }) => {
               <p className='w-full py-4'>{movie.overview.slice(0, 100)}<span onClick={() => openModal(movie)} className='text-sm text-orange-500 italic cursor-pointer hover:text-indigo-500 transition duration-300'>...read more</span></p>
             </div>
           ))}
-        </div>
+        </div> */}
         <div className='flex items-center justify-center bg-neutral-950 text-white px-4 py-1 mb-[-4rem] rounded-xl'>
           <button
             className='hover:scale-110 hover:text-teal-400 transition duration-200 ease-in'

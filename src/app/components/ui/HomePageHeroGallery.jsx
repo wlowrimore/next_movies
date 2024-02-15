@@ -3,21 +3,21 @@
 import Image from 'next/image';
 import { useState, useEffect } from 'react'
 
-const HomePageHeroGallery = ({ movies, pageNumber }) => {
-  const [trendingMovies, setTrendingMovies] = useState([]);
+const HomePageHeroGallery = ({ trendingMovies, pageNumber }) => {
+  // const [trendingMovies, setTrendingMovies] = useState([]);
 
-  useEffect(() => {
-    if (movies.results && movies.results.length > 0 && pageNumber === 1) {
-      const trendingSlice = movies.results.slice(12, 18);
-      setTrendingMovies(trendingSlice)
-    }
-  }, [movies.results, pageNumber])
+  // useEffect(() => {
+  //   if (movies.results && movies.results.length > 0 && pageNumber === 1) {
+  //     const trendingSlice = movies.results.slice(12, 18);
+  //     setTrendingMovies(trendingSlice)
+  //   }
+  // }, [movies.results, pageNumber])
 
 
   return (
     <div className='flex w-full justify-end'>
       <div className='flex flex-col'>
-        <div className='grid grid-cols-3 gap-2'>
+        <div className='grid grid-cols-3 gap-10 p-6'>
           {trendingMovies?.map((movie, index) => (
             <div key={movie.id} className='flex'>
               <Image
@@ -25,7 +25,7 @@ const HomePageHeroGallery = ({ movies, pageNumber }) => {
                 width={250}
                 height={350}
                 alt={movie.title}
-                className='w-[10rem] rounded-xl'
+                className='w-[10rem] rounded-xl opacity-90'
               />
             </div>
           ))}
