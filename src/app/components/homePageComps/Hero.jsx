@@ -18,7 +18,7 @@ const Hero = () => {
               </div>
             </div>
             <div className='relative w-full flex flex-col items-end justify-center'>
-              <h2 className='absolute top-[36%] left-[58%] z-10 text-red-700 uppercase w-1/2 text-4xl text-start'>Now Offering</h2>
+              <h2 className='absolute top-[36%] left-[58%] text-red-400 uppercase w-1/2 text-4xl text-start'>Now Offering</h2>
               <Image
                 src={YouTube}
                 alt='youtube'
