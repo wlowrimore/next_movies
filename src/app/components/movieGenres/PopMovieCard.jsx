@@ -6,7 +6,7 @@ import Thumb from '/public/images/thumb-up.webp';
 
 import { getGenres } from '../lib/genreList/get-genre';
 import HomePageHeroGallery from '../ui/HomePageHeroGallery';
-import Features from '../features/Features';
+import Features from '../homePageComps/Features';
 
 const PopMovieCard = ({ movies, pageNumber, setPageNumber }) => {
   const [modalData, setModalData] = useState(null);
