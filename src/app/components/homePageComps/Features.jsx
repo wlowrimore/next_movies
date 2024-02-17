@@ -4,8 +4,8 @@ import Download from '/public/images/download.webp'
 import NoContract from '/public/images/no-contract.webp'
 const Features = () => {
   return (
-    <div className='flex w-full items-center justify-around bg-gradient-to-t from-neutral-600/50 to-transparent'>
-      <div className='container flex w-full justify-around items-center'>
+    <div className='flex w-full h-screen items-center justify-around bg-gradient-to-t from-neutral-600/50 to-transparent'>
+      <div className='container flex w-full h-full justify-around items-center'>
         <div className='w-96 py-12'>
           <Image
             priority
