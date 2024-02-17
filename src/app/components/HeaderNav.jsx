@@ -24,7 +24,7 @@ const HeaderNav = () => {
       <SearchBar />
       {/* SignIn Logout */}
       <div className='flex items-center gap-8'>
-        <Link href='/' className='text-amber-400 cursor-pointer hover:bg-neutral-700/70 px-3 py-1 rounded transition duration-300'><h1>SignIn</h1></Link>
+        <Link href='/signin' className='text-amber-400 cursor-pointer hover:bg-neutral-700/70 px-3 py-1 rounded transition duration-300'><h1>SignIn</h1></Link>
         <Link href='/' className='text-amber-400 cursor-pointer hover:bg-neutral-700/70 px-3 py-1 rounded transition duration-300'><h1>Logout</h1></Link>
       </div>
     </nav>
