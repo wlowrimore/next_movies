@@ -1,6 +1,7 @@
 import Features from "./components/homePageComps/Features";
 import NextStatement from "./components/homePageComps/NextStatement";
 import Hero from "./components/homePageComps/Hero";
+import Bundles from "./components/Bundles";
 
 export default function Home() {
   return (
@@ -8,6 +9,7 @@ export default function Home() {
       <Hero />
       <NextStatement />
       <Features />
+      <Bundles />
     </main>
   );
 }
