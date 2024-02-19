@@ -37,7 +37,7 @@ const ActionMovieCard = ({ actionMovies, pageNumber, setPageNumber }) => {
   return (
     <>
       <div className='my-24 '>
-        <h1 className='text-3xl font-bold mt-6'>Action</h1>
+        <h1 className='text-3xl font-bold mt-6 text-neutral-400'>Action</h1>
         <div className='grid grid-cols-5 gap-10 py-8'>
           {actionMovies?.results && actionMovies?.results?.map((movie) => (
             <div key={movie.id} className='max-w-[16rem]'>
@@ -71,7 +71,7 @@ const ActionMovieCard = ({ actionMovies, pageNumber, setPageNumber }) => {
             </div>
           ))}
         </div>
-        <div className='flex items-center justify-center bg-neutral-800 text-white px-4 py-1 mb-[-4rem] rounded-xl'>
+        <div className='flex items-center justify-center bg-neutral-950 text-white px-4 py-1 mb-[-4rem] rounded-xl'>
           <button
             className='hover:scale-110 hover:text-teal-400 transition duration-200 ease-in'
             onClick={handlePrevPage}

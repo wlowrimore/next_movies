@@ -36,7 +36,7 @@ const ScienceFictionMovieCard = ({ scienceFictionMovies, pageNumber, setPageNumb
   return (
     <>
       <div className='my-24'>
-        <h1 className='text-3xl font-bold mt-6'>Science Fiction</h1>
+        <h1 className='text-3xl font-bold mt-6 text-neutral-400'>Science Fiction</h1>
         <div className='grid grid-cols-5 gap-10 py-8'>
           {scienceFictionMovies?.results && scienceFictionMovies?.results.map((movie) => (
             <div key={movie.id} className='max-w-[16rem]'>
@@ -48,7 +48,7 @@ const ScienceFictionMovieCard = ({ scienceFictionMovies, pageNumber, setPageNumb
                 onClick={() => openModal(movie)}
                 className='rounded-2xl shadow-md shadow-neutral-900 cursor-pointer hover:opacity-80 hover:scale-105 transition duration-300 border border-zinc-500'
               />
-              <h2 className='font-semibold pt-3'>{movie.title}<span className='text-sm font-normal ml-3'>{movie.release_date.split('-')[0]}</span></h2>
+              <h2 className='font-semibold pt-3 text-neutral-400'>{movie.title}<span className='text-sm font-normal ml-3'>{movie.release_date.split('-')[0]}</span></h2>
               <div className='flex'>
                 <p className='text-xs tracking-wider text-rose-600 pb-1'>
                   {Array.isArray(movie.genre_ids) && movie.genre_ids.length > 0
@@ -64,13 +64,13 @@ const ScienceFictionMovieCard = ({ scienceFictionMovies, pageNumber, setPageNumb
                   alt='Thumb up'
                   className='w-6'
                 />
-                <p>{movie.vote_average.toFixed(1)}&nbsp;<span>&#40;{movie.vote_count}&#41;</span></p>
+                <p className='text-neutral-400'>{movie.vote_average.toFixed(1)}&nbsp;<span>&#40;{movie.vote_count}&#41;</span></p>
               </div>
-              <p className='w-full py-4'>{movie.overview.slice(0, 100)}<span onClick={() => openModal(movie)} className='text-sm text-orange-500 italic cursor-pointer hover:text-indigo-500 transition duration-300'>...read more</span></p>
+              <p className='w-full py-4 text-neutral-400'>{movie.overview.slice(0, 100)}<span onClick={() => openModal(movie)} className='text-sm text-orange-500 italic cursor-pointer hover:text-indigo-500 transition duration-300'>...read more</span></p>
             </div>
           ))}
         </div>
-        <div className='flex items-center justify-center bg-neutral-800 text-white px-4 py-1 mb-[-4rem] rounded-xl'>
+        <div className='flex items-center justify-center bg-neutral-950 text-white px-4 py-1 mb-[-4rem] rounded-xl'>
           <button
             className='hover:scale-110 hover:text-teal-400 transition duration-200 ease-in'
             onClick={handlePrevPage}

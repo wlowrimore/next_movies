@@ -9,7 +9,7 @@ const TVGenre = () => {
     <div ref={dropdownRef}>
       <h3 onClick={toggleDropdown} className='text-amber-400 cursor-pointer hover:bg-neutral-700/70 px-3 py-1 rounded transition duration-300'>TV Genre</h3>
       {isVisible && (
-        <div className='absolute left-[48.2%] rounded-b-xl z-10 bg-neutral-950 text-neutral-300 py-4 space-y-1 grid grid-cols-5'>
+        <div className='absolute left-[30%] rounded-b-xl z-10 bg-neutral-950 text-neutral-300 py-4 space-y-1 grid grid-cols-5'>
           <option value='action-adventure' className='mt-[0.2rem] cursor-pointer hover:bg-neutral-700/70 roounded transition duration-300 py-1 px-3'>Action & Adventure</option>
           <option value='animation' className='cursor-pointer hover:bg-neutral-700/70 roounded transition duration-300 py-1 px-3'>Animation</option>
           <option value='comedy' className='cursor-pointer hover:bg-neutral-700/70 roounded transition duration-300 py-1 px-3'>Comedy</option>

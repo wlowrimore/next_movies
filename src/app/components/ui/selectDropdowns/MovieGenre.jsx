@@ -10,7 +10,7 @@ const MovieGenre = () => {
     <div ref={dropdownRef}>
       <h3 onClick={toggleDropdown} className='text-amber-400 cursor-pointer hover:bg-neutral-700/70 px-3 py-1 rounded transition duration-300'>Movie Genre</h3>
       {isVisible && (
-        <div className='absolute right-[12.8%] z-10 rounded-b-xl bg-neutral-950 text-neutral-300 py-6 space-y-1 gap-2 grid grid-cols-6'>
+        <div className='absolute right-[35%] z-10 rounded-b-xl bg-neutral-950 text-neutral-300 py-6 space-y-1 gap-2 grid grid-cols-6'>
           <Link href='/action-movies' onClick={toggleDropdown}><option value='action' className='mt-[0.2rem] cursor-pointer hover:bg-neutral-700/70 rounded transition duration-300 py-1 px-3'>Action</option></Link>
           <Link href='/adventure-movies' onClick={toggleDropdown}><option value='adventure' className='cursor-pointer hover:bg-neutral-700/70 rounded transition duration-300 py-1 px-3'>Adventure</option></Link>
           <Link href='/animation-movies' onClick={toggleDropdown}><option value='animation' className='cursor-pointer hover:bg-neutral-700/70 rounded transition duration-300 py-1 px-3'>Animation</option></Link>
